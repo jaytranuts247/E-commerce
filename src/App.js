@@ -1,12 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+=======
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 
 import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
+<<<<<<< HEAD
 import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
@@ -48,10 +54,59 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
+=======
+import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
+import Header from "./components/header/header.component";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+
+class App extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			currentUser: null,
+		};
+	}
+
+	unsubscribeFromAuth = null;
+
+	componentDidMount() {
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+			if (userAuth) {
+				const userRef = createUserProfileDocument(userAuth);
+
+				(await userRef).onSnapshot((snapShot) => {
+					console.log("snapshot");
+
+					this.setState(
+						{
+							currentUser: {
+								id: snapShot.id,
+								...snapShot.data(),
+							},
+						},
+						() => {
+							console.log("this state ", this.state);
+						}
+					);
+				});
+			}
+
+			this.setState({ currentUser: userAuth });
+		});
+	}
+	componentWillUnmount() {
+		this.unsubscribeFromAuth();
+	}
+	render() {
+		return (
+			<div>
+				<Header currentUser={this.state.currentUser} />
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route path="/shop" component={ShopPage} />
+<<<<<<< HEAD
 					<Route exact path="/checkout" component={CheckoutPage} />
 
 					<Route
@@ -61,10 +116,14 @@ class App extends React.Component {
 							currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
 						}
 					/>
+=======
+					<Route path="/signin" component={SignInAndSignUpPage} />
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 				</Switch>
 			</div>
 		);
 	}
+<<<<<<< HEAD
 }
 
 const mapStateToProps = (state) => {
@@ -104,6 +163,8 @@ function App() {
       </header>
     </div>
   );
+=======
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }
 
 export default App;

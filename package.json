@@ -1,5 +1,8 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 	"name": "crwn-clothing",
 	"version": "0.1.0",
 	"private": true,
@@ -8,6 +11,7 @@
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
 		"firebase": "^7.20.0",
+<<<<<<< HEAD
 		"lodash.memoize": "^4.1.2",
 		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
@@ -24,6 +28,13 @@
 		"reselect": "^4.0.0",
 		"styled-components": "^5.2.0",
 		"thunk": "^0.0.1"
+=======
+		"node-sass": "^4.14.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "3.4.3"
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 	},
 	"devDependencies": {
 		"eslint": "^6.6.0"
@@ -54,6 +65,7 @@
 	"license": "MIT",
 	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
 	"keywords": []
+<<<<<<< HEAD
 =======
   "name": "crwn-clothing",
   "version": "0.1.0",
@@ -88,4 +100,6 @@
     ]
   }
 >>>>>>> 2b322ba... Initialize project using Create React App
+=======
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }

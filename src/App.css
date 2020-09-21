@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 body {
   font-family: 'Open Sans Condensed';
   padding: 20px 40px;
@@ -14,13 +15,19 @@ a {
 =======
 .App {
   text-align: center;
+=======
+body {
+  font-family: 'Open Sans Condensed';
+  padding: 20px 40px;
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: black;
 }
 
+<<<<<<< HEAD
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -50,4 +57,8 @@ a {
     transform: rotate(360deg);
   }
 >>>>>>> 2b322ba... Initialize project using Create React App
+=======
+* {
+  box-sizing: border-box;
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }

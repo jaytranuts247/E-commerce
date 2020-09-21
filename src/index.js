@@ -24,19 +24,23 @@ ReactDOM.render(
 =======
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
+<<<<<<< HEAD
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 >>>>>>> 2b322ba... Initialize project using Create React App
+=======
+>>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
