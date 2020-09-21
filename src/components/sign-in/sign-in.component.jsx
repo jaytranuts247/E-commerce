@@ -8,6 +8,7 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import {
 	emailSignInStart,
@@ -16,6 +17,9 @@ import {
 =======
 import { signInWithGoogle } from "../../firebase/firebase.utils";
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+>>>>>>> 9a93ef9... finish sign in handleSubmit method
 
 import "./sign-in.styles.scss";
 
@@ -29,6 +33,7 @@ class SignIn extends React.Component {
 		};
 	}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	handleSubmit = async (event) => {
 		event.preventDefault();
@@ -48,6 +53,17 @@ class SignIn extends React.Component {
 
 		this.setState({ email: "", password: "" });
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+	handleSubmit = async (event) => {
+		event.preventDefault();
+		const { email, password } = this.state;
+		try {
+			await auth.signInWithEmailAndPassword(email, password);
+			this.setState({ email: "", password: "" });
+		} catch (error) {
+			console.log(error);
+		}
+>>>>>>> 9a93ef9... finish sign in handleSubmit method
 	};
 
 	handleChange = (event) => {
