@@ -97,6 +97,7 @@ class App extends React.Component {
 		this.unsubscribeFromAuth();
 	}
 	render() {
+		const { currentUser } = this.props;
 		return (
 			<div>
 <<<<<<< HEAD
@@ -120,6 +121,7 @@ class App extends React.Component {
 						path="/signin"
 						render={() =>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
 						}
 					/>
@@ -132,6 +134,9 @@ class App extends React.Component {
 							) : (
 								<SignInAndSignUpPage />
 							)
+=======
+							currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 						}
 					/>
 >>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { UserActionTypes } from "./user.types";
 
 const {
@@ -31,6 +32,11 @@ export const signInFailure = (error) => ({
 =======
 =======
 import { SET_CURRENT_USER } from "./UserActionTypes";
+=======
+import { UserActionTypes } from "./user.types";
+
+const { SET_CURRENT_USER } = UserActionTypes;
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 
 >>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 export const setCurrentUser = (user) => ({

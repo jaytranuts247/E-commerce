@@ -16,17 +16,26 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 =======
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+<<<<<<< HEAD
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+import CartDropDown from "../cart-dropdown/cart-dropdown.component";
+import CartIcon from "../cart-icon/cart-icon.component";
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 
 import { auth } from "../../firebase/firebase.utils";
 
 import "./header.styles.scss";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Header = ({ currentUser, hidden }) => (
 =======
 const Header = ({ currentUser }) => (
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+const Header = ({ currentUser, hidden }) => (
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 	<div className="header">
 		<Link className="logo-container" to="/">
 			<Logo className="logo" />
@@ -48,6 +57,7 @@ const Header = ({ currentUser }) => (
 				</Link>
 			)}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<CartIcon />
 		</div>
 		{hidden ? null : <CartDropDown />}
@@ -61,16 +71,26 @@ const mapStateToProps = createStructuredSelector({
 
 export default connect(mapStateToProps)(Header);
 =======
+=======
+			<CartIcon />
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 		</div>
+		{hidden ? null : <CartDropDown />}
 	</div>
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export default Header;
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 =======
 const mapStateToProps = (state) => ({
 	currentUser: state.user.currentUser,
+=======
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+	currentUser,
+	hidden,
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 });
 
 export default connect(mapStateToProps)(Header);

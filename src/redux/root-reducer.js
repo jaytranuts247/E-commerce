@@ -25,8 +25,10 @@ export default persistReducer(persistConfig, rootReducer);
 =======
 
 import userReducer from "./user/user.reducer";
+import cartReducer from "./cart/cart.reducer";
 
 export default combineReducers({
 	user: userReducer,
+	cart: cartReducer,
 });
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component

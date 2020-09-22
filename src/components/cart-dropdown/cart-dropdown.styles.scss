@@ -1,0 +1,40 @@
+.cart-dropdown {
+	position: absolute;
+<<<<<<< HEAD
+	width: 270px;
+=======
+	width: 240px;
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+	height: 340px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border: 1px solid black;
+	background-color: white;
+	top: 90px;
+	right: 40px;
+	z-index: 5;
+
+	.cart-items {
+		height: 240px;
+		display: flex;
+		flex-direction: column;
+<<<<<<< HEAD
+		overflow: auto;
+=======
+		overflow: scroll;
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+	}
+
+	button {
+		margin-top: auto;
+	}
+<<<<<<< HEAD
+
+	.empty-message {
+		font-size: 18px;
+		margin: 50px auto;
+	}
+=======
+>>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+}
