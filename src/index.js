@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -25,15 +26,26 @@ ReactDOM.render(
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+=======
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 
-import './index.css';
-import App from './App';
+import { Provider } from "react-redux";
+
+import store from "./redux/store";
+
+import "./index.css";
+import App from "./App";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById("root")
 );
 <<<<<<< HEAD
 

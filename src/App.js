@@ -6,7 +6,11 @@ import { connect } from "react-redux";
 =======
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+<<<<<<< HEAD
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+import { connect } from "react-redux";
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 
 import "./App.css";
 
@@ -58,18 +62,14 @@ class App extends React.Component {
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			currentUser: null,
-		};
-	}
-
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
+		const { setCurrentUser } = this.props;
+
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			if (userAuth) {
 				const userRef = createUserProfileDocument(userAuth);
@@ -77,21 +77,16 @@ class App extends React.Component {
 				(await userRef).onSnapshot((snapShot) => {
 					console.log("snapshot");
 
-					this.setState(
-						{
-							currentUser: {
-								id: snapShot.id,
-								...snapShot.data(),
-							},
+					setCurrentUser({
+						currentUser: {
+							id: snapShot.id,
+							...snapShot.data(),
 						},
-						() => {
-							console.log("this state ", this.state);
-						}
-					);
+					});
 				});
 			}
 
-			this.setState({ currentUser: userAuth });
+			setCurrentUser(userAuth);
 		});
 	}
 	componentWillUnmount() {
@@ -100,8 +95,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+<<<<<<< HEAD
 				<Header currentUser={this.state.currentUser} />
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+				<Header />
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 
 				<Switch>
 					<Route exact path="/" component={HomePage} />
@@ -167,5 +166,13 @@ function App() {
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }
 
+<<<<<<< HEAD
 export default App;
 >>>>>>> 2b322ba... Initialize project using Create React App
+=======
+// const mapDispatchToProps = (dispatch) => ({
+// 	setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+// });
+
+export default connect(null, { setCurrentUser })(App);
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component

@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+=======
+import { connect } from "react-redux";
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
@@ -61,5 +65,13 @@ export default connect(mapStateToProps)(Header);
 	</div>
 );
 
+<<<<<<< HEAD
 export default Header;
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+const mapStateToProps = (state) => ({
+	currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component

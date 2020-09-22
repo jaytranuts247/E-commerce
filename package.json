@@ -32,9 +32,16 @@
 		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-redux": "^7.2.1",
 		"react-router-dom": "^5.2.0",
+<<<<<<< HEAD
 		"react-scripts": "3.4.3"
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+		"react-scripts": "3.4.3",
+		"redux": "^4.0.5",
+		"redux-logger": "^3.0.6"
+>>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 	},
 	"devDependencies": {
 		"eslint": "^6.6.0"
