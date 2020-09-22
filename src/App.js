@@ -5,10 +5,14 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 =======
 import React from "react";
+<<<<<<< HEAD
 import { Switch, Route } from "react-router-dom";
 <<<<<<< HEAD
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 =======
+=======
+import { Switch, Route, Redirect } from "react-router-dom";
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 import { connect } from "react-redux";
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
 
@@ -106,18 +110,31 @@ class App extends React.Component {
 					<Route exact path="/" component={HomePage} />
 					<Route path="/shop" component={ShopPage} />
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<Route exact path="/checkout" component={CheckoutPage} />
 
+=======
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 					<Route
 						exact
 						path="/signin"
 						render={() =>
+<<<<<<< HEAD
 							currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
 						}
 					/>
 =======
 					<Route path="/signin" component={SignInAndSignUpPage} />
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+							this.props.currentUser ? (
+								<Redirect to="/" />
+							) : (
+								<SignInAndSignUpPage />
+							)
+						}
+					/>
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 				</Switch>
 			</div>
 		);
@@ -167,6 +184,7 @@ function App() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default App;
 >>>>>>> 2b322ba... Initialize project using Create React App
 =======
@@ -176,3 +194,21 @@ export default App;
 
 export default connect(null, { setCurrentUser })(App);
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
+=======
+// const mapStateToProps = ({ user }) => ({
+// 	currentUser: user.currentUser,
+// });
+
+const mapStateToProps = (state) => {
+	console.log("mapStateToProps ", state);
+	return {
+		currentUser: state.user.currentUser,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+	setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in

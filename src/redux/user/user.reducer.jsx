@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { UserActionTypes } from "./user.types";
 
 const {
@@ -13,6 +14,10 @@ const INITIAL_STATE = {
 	currentUser: null,
 	error: null,
 =======
+=======
+import { SET_CURRENT_USER } from "./UserActionTypes";
+
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 const INITIAL_STATE = {
 	currentUser: null,
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
@@ -20,6 +25,7 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		case SIGN_IN_SUCCESS:
 			return {
@@ -35,6 +41,9 @@ const userReducer = (state = INITIAL_STATE, action) => {
 			};
 =======
 		case "SET_CURRENT_USER":
+=======
+		case SET_CURRENT_USER:
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 			return {
 				...state,
 				currentUser: action.payload,

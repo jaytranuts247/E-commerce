@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { UserActionTypes } from "./user.types";
 
 const {
@@ -28,8 +29,12 @@ export const signInFailure = (error) => ({
 	payload: error,
 });
 =======
+=======
+import { SET_CURRENT_USER } from "./UserActionTypes";
+
+>>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
 export const setCurrentUser = (user) => ({
-	type: "SET_CURRENT_USER",
+	type: SET_CURRENT_USER,
 	payload: user,
 });
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
