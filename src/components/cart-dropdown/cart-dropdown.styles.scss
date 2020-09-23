@@ -1,10 +1,14 @@
 .cart-dropdown {
 	position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	width: 270px;
 =======
 	width: 240px;
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+=======
+	width: 270px;
+>>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
 	height: 340px;
 	display: flex;
 	flex-direction: column;
@@ -20,10 +24,14 @@
 		display: flex;
 		flex-direction: column;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		overflow: auto;
 =======
 		overflow: scroll;
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+=======
+		overflow: auto;
+>>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
 	}
 
 	button {

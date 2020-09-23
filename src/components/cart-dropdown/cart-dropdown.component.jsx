@@ -1,5 +1,6 @@
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
@@ -38,17 +39,33 @@ const mapStateToProps = (state) => ({
 
 export default withRouter(connect(mapStateToProps)(CartDropdown));
 =======
+=======
+import { connect } from "react-redux";
+>>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
 
 import CustomButton from "../custom-button/custom-button.component";
+import CartItem from "../cart-item/cart-item.component";
 
 import "./cart-dropdown.styles.scss";
 
-const CartDropDown = () => (
+const CartDropdown = ({ cartItems }) => (
 	<div className="cart-dropdown">
-		<div className="cart-items" />
+		<div className="cart-items">
+			{cartItems.map((cartItem) => (
+				<CartItem key={cartItem.id} item={cartItem} />
+			))}
+		</div>
 		<CustomButton>GO TO CHECKOUT</CustomButton>
 	</div>
 );
 
+<<<<<<< HEAD
 export default CartDropDown;
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+=======
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+	cartItems,
+});
+
+export default connect(mapStateToProps)(CartDropdown);
+>>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
