@@ -21,6 +21,7 @@ import "./App.css";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
@@ -63,10 +64,14 @@ class App extends React.Component {
 			<div>
 				<Header />
 =======
+=======
+import CheckoutPage from "./pages/checkout/checkout.component";
+>>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 
 class App extends React.Component {
 	unsubscribeFromAuth = null;
@@ -112,10 +117,15 @@ class App extends React.Component {
 					<Route path="/shop" component={ShopPage} />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<Route exact path="/checkout" component={CheckoutPage} />
 
 =======
 >>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
+=======
+					<Route exact path="/checkout" component={CheckoutPage} />
+
+>>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 					<Route
 						exact
 						path="/signin"
@@ -207,7 +217,7 @@ export default connect(null, { setCurrentUser })(App);
 const mapStateToProps = (state) => {
 	console.log("mapStateToProps ", state);
 	return {
-		currentUser: state.user.currentUser,
+		currentUser: selectCurrentUser(state),
 	};
 };
 

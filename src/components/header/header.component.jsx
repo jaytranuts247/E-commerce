@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 <<<<<<< HEAD
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+<<<<<<< HEAD
 =======
 import { connect } from "react-redux";
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
@@ -14,6 +15,8 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 =======
+=======
+>>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 <<<<<<< HEAD
@@ -21,7 +24,12 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 =======
 import CartDropDown from "../cart-dropdown/cart-dropdown.component";
 import CartIcon from "../cart-icon/cart-icon.component";
+<<<<<<< HEAD
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+=======
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
+>>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 
 import { auth } from "../../firebase/firebase.utils";
 
@@ -81,6 +89,7 @@ export default connect(mapStateToProps)(Header);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Header;
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 =======
@@ -91,6 +100,11 @@ const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
 	currentUser,
 	hidden,
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
+=======
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
+	hidden: selectCartHidden,
+>>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 });
 
 export default connect(mapStateToProps)(Header);
