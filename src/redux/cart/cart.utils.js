@@ -14,6 +14,9 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 	return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e4f617... added addItem and removeItem functionality to checkout item component
 
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
 	const existingCartItem = cartItems.find(
@@ -30,5 +33,8 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
 			: cartItem
 	);
 };
+<<<<<<< HEAD
 =======
 >>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
+=======
+>>>>>>> 9e4f617... added addItem and removeItem functionality to checkout item component

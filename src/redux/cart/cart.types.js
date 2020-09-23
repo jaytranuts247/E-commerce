@@ -5,9 +5,12 @@ export const CartActionTypes = {
 	ADD_ITEM: "ADD_ITEM",
 	REMOVE_ITEM: "REMOVE_ITEM",
 	CLEAR_ITEM_FROM_CART: "CLEAR_ITEM_FROM_CART",
+<<<<<<< HEAD
 =======
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 =======
 	ADD_ITEM: "ADD_ITEM",
 >>>>>>> 64aba91... created cart-item component and connected cart dropdown with cartItems reducer.
+=======
+>>>>>>> 9e4f617... added addItem and removeItem functionality to checkout item component
 };
