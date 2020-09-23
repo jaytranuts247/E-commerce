@@ -45,6 +45,7 @@ import { connect } from "react-redux";
 
 import CustomButton from "../custom-button/custom-button.component";
 import CartItem from "../cart-item/cart-item.component";
+import { selectCartItems } from "../../redux/cart/cart.selectors";
 
 import "./cart-dropdown.styles.scss";
 
@@ -60,11 +61,16 @@ const CartDropdown = ({ cartItems }) => (
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default CartDropDown;
 >>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
 =======
 const mapStateToProps = ({ cart: { cartItems } }) => ({
 	cartItems,
+=======
+const mapStateToProps = (state) => ({
+	cartItems: selectCartItems(state),
+>>>>>>> ae123d8... updating application with reselect, replaced cart selectors with momoized selectors
 });
 
 export default connect(mapStateToProps)(CartDropdown);

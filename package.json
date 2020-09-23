@@ -40,8 +40,13 @@
 =======
 		"react-scripts": "3.4.3",
 		"redux": "^4.0.5",
+<<<<<<< HEAD
 		"redux-logger": "^3.0.6"
 >>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
+=======
+		"redux-logger": "^3.0.6",
+		"reselect": "^4.0.0"
+>>>>>>> ae123d8... updating application with reselect, replaced cart selectors with momoized selectors
 	},
 	"devDependencies": {
 		"eslint": "^6.6.0"

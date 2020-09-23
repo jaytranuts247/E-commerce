@@ -14225,13 +14225,19 @@ requires-port@^1.0.0:
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae123d8... updating application with reselect, replaced cart selectors with momoized selectors
 reselect@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
   integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
+<<<<<<< HEAD
 =======
 >>>>>>> 2b322ba... Initialize project using Create React App
+=======
+>>>>>>> ae123d8... updating application with reselect, replaced cart selectors with momoized selectors
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
