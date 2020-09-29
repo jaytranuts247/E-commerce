@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
@@ -40,31 +41,23 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(null, mapDispatchToProps)(ShopPage);
 =======
 import React from 'react';
+=======
+import React from "react";
+import { Route } from "react-router-dom";
+>>>>>>> ddf0062... moved directory and shop data into its reducer, create respective selectors and updated corresponding components with new redux flow for directory/shop
 
-import SHOP_DATA from './shop.data.js';
+import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
+import CollectionPage from "../collection/collection.component";
 
-import CollectionPreview from '../../components/collection-preview/collection-preview';
-
-class ShopPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      collections: SHOP_DATA
-    };
-  }
-
-  render() {
-    const { collections } = this.state;
-    return (
-      <div className='shop-page'>
-        {collections.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPreview key={id} {...otherCollectionProps} />
-        ))}
-      </div>
-    );
-  }
-}
+const ShopPage = ({ match, location, history }) => {
+	console.log("match location and history", match, location, history);
+	return (
+		<div className="shop-page">
+			<Route exact path={`${match.path}`} component={CollectionsOverview} />
+			<Route path={`${match.path}/:collectionId`} component={CollectionPage} />
+		</div>
+	);
+};
 
 export default ShopPage;
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
