@@ -18,13 +18,23 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
 	[selectCollections],
-	(collections) => Object.keys(collections).map((key) => collections[key])
+	(collections) =>
+		collections ? Object.keys(collections).map((key) => collections[key]) : []
 );
 
 // use memoize from lodash to memoize the whole function including -- collectionUrlParam -- as it is previously outside the scope of selector which will cause re-rendering on every state changes
 export const selectCollection = memoize((collectionUrlParam) =>
-	createSelector(
-		[selectCollections],
-		(collections) => collections[collectionUrlParam]
+	createSelector([selectCollections], (collections) =>
+		collections ? collections[collectionUrlParam] : null
 	)
+);
+
+export const selectIsCollectionFetching = createSelector(
+	[selectShop],
+	(shop) => shop.isFetching
+);
+
+export const selectIsCollectionsLoaded = createSelector(
+	[selectShop],
+	(shop) => !!shop.collections // double bangs -> isObject
 );

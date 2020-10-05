@@ -9,9 +9,14 @@ import ShopPage from "./pages/shop/shop.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Header from "./components/header/header.component";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+	auth,
+	createUserProfileDocument,
+	// addCollectionAndDocuments,
+} from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectCollectionsForPreview } from "./redux/shop/shop.selector";
 
 class App extends React.Component {
 	unsubscribeFromAuth = null;
@@ -36,6 +41,11 @@ class App extends React.Component {
 			}
 
 			setCurrentUser(userAuth);
+			// addCollectionAndDocuments(
+			// 	"collections",
+			// 	collectionsArray.map(({ title, items }) => ({ title, items }))
+			// );
+			// console.log("addCollectionAndDocuments");
 		});
 	}
 	componentWillUnmount() {
@@ -73,6 +83,7 @@ const mapStateToProps = (state) => {
 	console.log("mapStateToProps ", state);
 	return {
 		currentUser: selectCurrentUser(state),
+		collectionsArray: selectCollectionsForPreview(state),
 	};
 };
 
