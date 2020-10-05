@@ -41,6 +41,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
 export const addCollectionAndDocuments = async (
 	collectionKey,
 	objectsToAdd
@@ -75,8 +78,11 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 	}, {});
 };
 
+<<<<<<< HEAD
 =======
 >>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+=======
+>>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
