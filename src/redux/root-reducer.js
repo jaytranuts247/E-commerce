@@ -1,19 +1,23 @@
-import { UserActionTypes } from "./user.types";
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
-const INITIAL_STATE = {
-	currentUser: null,
+import userReducer from "./user/user.reducer";
+import cartReducer from "./cart/cart.reducer";
+import directoryReducer from "./directory/directory.reducer";
+import shopReducer from "./shop/shop.reducer";
+
+const persistConfig = {
+	key: "root",
+	storage,
+	whitelist: ["cart"],
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
-	switch (action.type) {
-		case UserActionTypes.SET_CURRENT_USER:
-			return {
-				...state,
-				currentUser: action.payload,
-			};
-		default:
-			return state;
-	}
-};
+const rootReducer = combineReducers({
+	user: userReducer,
+	cart: cartReducer,
+	directory: directoryReducer,
+	shop: shopReducer,
+});
 
-export default userReducer;
+export default persistReducer(persistConfig, rootReducer);
