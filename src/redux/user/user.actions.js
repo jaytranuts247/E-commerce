@@ -1,46 +1,37 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { UserActionTypes } from "./user.types";
-
-const {
-	SET_CURRENT_USER,
-	GOOGLE_SIGN_IN_START,
-	SIGN_IN_SUCCESS,
-	SIGN_IN_FAILURE,
-	EMAIL_SIGN_IN_START,
-} = UserActionTypes;
+import UserActionTypes from "./user.types";
 
 export const googleSignInStart = () => ({
-	type: GOOGLE_SIGN_IN_START,
-});
-
-export const emailSignInStart = (emailAndPassword) => ({
-	type: EMAIL_SIGN_IN_START,
-	payload: emailAndPassword,
+	type: UserActionTypes.GOOGLE_SIGN_IN_START,
 });
 
 export const signInSuccess = (user) => ({
-	type: SIGN_IN_SUCCESS,
+	type: UserActionTypes.SIGN_IN_SUCCESS,
 	payload: user,
 });
 
 export const signInFailure = (error) => ({
-	type: SIGN_IN_FAILURE,
+	type: UserActionTypes.SIGN_IN_FAILURE,
 	payload: error,
 });
-=======
-=======
-import { SET_CURRENT_USER } from "./UserActionTypes";
-=======
-import { UserActionTypes } from "./user.types";
 
-const { SET_CURRENT_USER } = UserActionTypes;
->>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
-
->>>>>>> 2c65ed4... updating our app to redirect to home if user is signed in
-export const setCurrentUser = (user) => ({
-	type: SET_CURRENT_USER,
-	payload: user,
+export const emailSignInStart = (emailAndPassword) => ({
+	type: UserActionTypes.EMAIL_SIGN_IN_START,
+	payload: emailAndPassword,
 });
->>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
+
+export const checkUserSession = () => ({
+	type: UserActionTypes.CHECK_USER_SESSION,
+});
+
+export const signOutStart = () => ({
+	type: UserActionTypes.SIGN_OUT_START,
+});
+
+export const signOutSuccess = () => ({
+	type: UserActionTypes.SIGN_OUT_SUCCESS,
+});
+
+export const signOutFailure = (error) => ({
+	type: UserActionTypes.SIGN_OUT_FAILURE,
+	payload: error,
+});

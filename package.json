@@ -1,106 +1,28 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-	"name": "crwn-clothing",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.3.2",
-		"@testing-library/user-event": "^7.1.2",
-		"firebase": "^7.20.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ddf0062... moved directory and shop data into its reducer, create respective selectors and updated corresponding components with new redux flow for directory/shop
-		"lodash.memoize": "^4.1.2",
-		"node-sass": "^4.14.1",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-redux": "^7.2.1",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "3.4.3",
-		"react-stripe-checkout": "^2.6.3",
-		"redux": "^4.0.5",
-		"redux-logger": "^3.0.6",
-		"redux-persist": "^6.0.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-		"redux-saga": "^1.1.3",
-=======
->>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
-		"redux-thunk": "^2.3.0",
-		"reselect": "^4.0.0",
-		"styled-components": "^5.2.0",
-		"thunk": "^0.0.1"
-<<<<<<< HEAD
-=======
-		"node-sass": "^4.14.1",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-redux": "^7.2.1",
-		"react-router-dom": "^5.2.0",
-<<<<<<< HEAD
-		"react-scripts": "3.4.3"
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-		"react-scripts": "3.4.3",
-		"redux": "^4.0.5",
-<<<<<<< HEAD
-		"redux-logger": "^3.0.6"
->>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
-=======
-		"redux-logger": "^3.0.6",
-=======
->>>>>>> ddf0062... moved directory and shop data into its reducer, create respective selectors and updated corresponding components with new redux flow for directory/shop
-		"reselect": "^4.0.0"
->>>>>>> ae123d8... updating application with reselect, replaced cart selectors with momoized selectors
-=======
->>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
-	},
-	"devDependencies": {
-		"eslint": "^6.6.0"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"main": "index.js",
-	"author": "themikaelson <34260590+themikaelson@users.noreply.github.com>",
-	"license": "MIT",
-	"description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-	"keywords": []
-<<<<<<< HEAD
-=======
   "name": "crwn-clothing",
   "version": "0.1.0",
+  "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "firebase": "6.0.2",
+    "node-sass": "4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "7.0.3",
+    "react-router-dom": "5.0.0",
+    "react-stripe-checkout": "2.6.3",
+    "redux": "4.0.1",
+    "redux-logger": "3.0.6",
+    "redux-persist": "5.10.0",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0",
+    "styled-components": "4.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "3.0.0"
+  },
+  "resolutions": {
+    "babel-jest": "24.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -123,7 +45,4 @@
       "last 1 safari version"
     ]
   }
->>>>>>> 2b322ba... Initialize project using Create React App
-=======
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 }

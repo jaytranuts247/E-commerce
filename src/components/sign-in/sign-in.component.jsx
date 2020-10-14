@@ -1,27 +1,19 @@
 import React from "react";
-<<<<<<< HEAD
 import { connect } from "react-redux";
-=======
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-// import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import {
-	emailSignInStart,
 	googleSignInStart,
+	emailSignInStart,
 } from "../../redux/user/user.actions";
-=======
-import { signInWithGoogle } from "../../firebase/firebase.utils";
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
->>>>>>> 9a93ef9... finish sign in handleSubmit method
 
-import "./sign-in.styles.scss";
+import {
+	SignInContainer,
+	SignInTitle,
+	ButtonsBarContainer,
+} from "./sign-in.styles";
 
 class SignIn extends React.Component {
 	constructor(props) {
@@ -33,37 +25,12 @@ class SignIn extends React.Component {
 		};
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	handleSubmit = async (event) => {
 		event.preventDefault();
 		const { emailSignInStart } = this.props;
 		const { email, password } = this.state;
-		// try {
-		// 	await auth.signInWithEmailAndPassword(email, password);
-		// 	this.setState({ email: "", password: "" });
-		// } catch (error) {
-		// 	console.log(error);
-		// }
 
 		emailSignInStart(email, password);
-=======
-	handleSubmit = (event) => {
-		event.preventDefault();
-
-		this.setState({ email: "", password: "" });
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-	handleSubmit = async (event) => {
-		event.preventDefault();
-		const { email, password } = this.state;
-		try {
-			await auth.signInWithEmailAndPassword(email, password);
-			this.setState({ email: "", password: "" });
-		} catch (error) {
-			console.log(error);
-		}
->>>>>>> 9a93ef9... finish sign in handleSubmit method
 	};
 
 	handleChange = (event) => {
@@ -73,13 +40,10 @@ class SignIn extends React.Component {
 	};
 
 	render() {
-<<<<<<< HEAD
 		const { googleSignInStart } = this.props;
-=======
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
 		return (
-			<div className="sign-in">
-				<h2>I already have an account</h2>
+			<SignInContainer>
+				<SignInTitle>I already have an account</SignInTitle>
 				<span>Sign in with your email and password</span>
 
 				<form onSubmit={this.handleSubmit}>
@@ -99,24 +63,22 @@ class SignIn extends React.Component {
 						label="password"
 						required
 					/>
-					<div className="buttons">
+					<ButtonsBarContainer>
 						<CustomButton type="submit"> Sign in </CustomButton>
-<<<<<<< HEAD
-						<CustomButton onClick={googleSignInStart} isGoogleSignIn>
-=======
-						<CustomButton onClick={signInWithGoogle} isGoogleSignIn>
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-							{" "}
-							Sign in with Google{" "}
+						<CustomButton
+							type="button"
+							onClick={googleSignInStart}
+							isGoogleSignIn
+						>
+							Sign in with Google
 						</CustomButton>
-					</div>
+					</ButtonsBarContainer>
 				</form>
-			</div>
+			</SignInContainer>
 		);
 	}
 }
 
-<<<<<<< HEAD
 const mapDispatchToProps = (dispatch) => ({
 	googleSignInStart: () => dispatch(googleSignInStart()),
 	emailSignInStart: (email, password) =>
@@ -124,6 +86,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);
-=======
-export default SignIn;
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.

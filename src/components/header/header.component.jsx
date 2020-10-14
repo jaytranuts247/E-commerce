@@ -1,75 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-<<<<<<< HEAD
-=======
-import { connect } from "react-redux";
->>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component
-
-import { ReactComponent as Logo } from "../../assets/crown.svg";
-import CartDropDown from "../cart-dropdown/cart-dropdown.component";
-import CartIcon from "../cart-icon/cart-icon.component";
-import { selectCartHidden } from "../../redux/cart/cart.selectors";
-import { selectCurrentUser } from "../../redux/user/user.selectors";
-=======
-=======
->>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
-
-import { ReactComponent as Logo } from "../../assets/crown.svg";
-<<<<<<< HEAD
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-import CartDropDown from "../cart-dropdown/cart-dropdown.component";
-import CartIcon from "../cart-icon/cart-icon.component";
-<<<<<<< HEAD
->>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
-=======
-import { selectCartHidden } from "../../redux/cart/cart.selectors";
-import { selectCurrentUser } from "../../redux/user/user.selectors";
->>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
 
 import { auth } from "../../firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-import "./header.styles.scss";
+import { ReactComponent as Logo } from "../../assets/crown.svg";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+import {
+	HeaderContainer,
+	LogoContainer,
+	OptionsContainer,
+	OptionLink,
+} from "./header.styles";
+
 const Header = ({ currentUser, hidden }) => (
-=======
-const Header = ({ currentUser }) => (
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-const Header = ({ currentUser, hidden }) => (
->>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
-	<div className="header">
-		<Link className="logo-container" to="/">
+	<HeaderContainer>
+		<LogoContainer to="/">
 			<Logo className="logo" />
-		</Link>
-		<div className="options">
-			<Link className="option" to="/shop">
-				SHOP
-			</Link>
-			<Link className="option" to="/shop">
-				CONTACT
-			</Link>
+		</LogoContainer>
+		<OptionsContainer>
+			<OptionLink to="/shop">SHOP</OptionLink>
+			<OptionLink to="/shop">CONTACT</OptionLink>
 			{currentUser ? (
-				<div className="option" onClick={() => auth.signOut()}>
+				<OptionLink as="div" onClick={() => auth.signOut()}>
 					SIGN OUT
-				</div>
+				</OptionLink>
 			) : (
-				<Link className="option" to="/signin">
-					SIGN IN
-				</Link>
+				<OptionLink to="/signin">SIGN IN</OptionLink>
 			)}
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<CartIcon />
-		</div>
-		{hidden ? null : <CartDropDown />}
-	</div>
+		</OptionsContainer>
+		{hidden ? null : <CartDropdown />}
+	</HeaderContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
@@ -78,34 +44,3 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export default connect(mapStateToProps)(Header);
-=======
-=======
-			<CartIcon />
->>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
-		</div>
-		{hidden ? null : <CartDropDown />}
-	</div>
-);
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default Header;
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
-const mapStateToProps = (state) => ({
-	currentUser: state.user.currentUser,
-=======
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-	currentUser,
-	hidden,
->>>>>>> 69372a8... added cartIcon and cartDropdown components to our application, also implemented cart reducer.
-=======
-const mapStateToProps = createStructuredSelector({
-	currentUser: selectCurrentUser,
-	hidden: selectCartHidden,
->>>>>>> adb6e88... added checkout page, checkout item component and updated cart to use selectors from reselect.
-});
-
-export default connect(mapStateToProps)(Header);
->>>>>>> 5375a7a... added redux, and implemented userReducer and userActions to header and App Component

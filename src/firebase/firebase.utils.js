@@ -12,6 +12,7 @@ const firebaseConfig = {
 	appId: "1:1095360066467:web:7a14e163ee5de1b7302016",
 	measurementId: "G-157R8YHV40",
 };
+firebase.initializeApp(firebaseConfig);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
 	if (!userAuth) return;
@@ -22,37 +23,29 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 	if (!snapShot.exists) {
 		const { displayName, email } = userAuth;
-		console.log("displayName and email of userAuth ", displayName, email);
-
-		const createAt = new Date();
-
+		const createdAt = new Date();
 		try {
 			await userRef.set({
 				displayName,
 				email,
-				createAt,
+				createdAt,
 				...additionalData,
 			});
 		} catch (error) {
-			console.log("error creating user ", error.message);
+			console.log("error creating user", error.message);
 		}
 	}
+
 	return userRef;
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
 export const addCollectionAndDocuments = async (
 	collectionKey,
 	objectsToAdd
 ) => {
 	const collectionRef = firestore.collection(collectionKey);
-	console.log(collectionRef);
 
 	const batch = firestore.batch();
-
 	objectsToAdd.forEach((obj) => {
 		const newDocRef = collectionRef.doc();
 		batch.set(newDocRef, obj);
@@ -64,6 +57,7 @@ export const addCollectionAndDocuments = async (
 export const convertCollectionsSnapshotToMap = (collections) => {
 	const transformedCollection = collections.docs.map((doc) => {
 		const { title, items } = doc.data();
+
 		return {
 			routeName: encodeURI(title.toLowerCase()),
 			id: doc.id,
@@ -78,27 +72,20 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 	}, {});
 };
 
-<<<<<<< HEAD
-=======
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
-=======
->>>>>>> 9ad5669... added redux-thunk and refactor collection and collections-overview
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export const getCurrentUser = () => {
+	return new Promise((resolve, reject) => {
+		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+			unsubscribe();
+			resolve(userAuth);
+		}, reject);
+	});
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-<<<<<<< HEAD
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () =>
-	auth.signInWithPopup(googleProvider).then((result) => console.log(result));
-=======
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () =>
-	auth.signInWithPopup(provider).then((result) => console.log(result));
->>>>>>> 7b84abf... implemented firebase utils, including ability to store authenticated users into firestore database.
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
